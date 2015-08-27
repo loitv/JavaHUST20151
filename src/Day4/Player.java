@@ -7,6 +7,7 @@ public class Player {
 
 	private String name;
 	private int point;
+	private int wonMatch;
 	private Scanner presskey;
 	
 	//Ham khoi tao
@@ -36,6 +37,14 @@ public class Player {
 	
 	public int getPoint() {
 		return this.point;
+	}
+	
+	public void setwonMatch(int wonMatch) {
+		this.wonMatch = wonMatch;
+	}
+	
+	public int getWonMatch() {
+		return wonMatch;
 	}
 	
 	public String getName() {

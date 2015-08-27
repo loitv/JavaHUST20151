@@ -17,6 +17,7 @@ public class Match {
 	public void runMatch() {
 		this.start();
 		this.stop();
+		this.finalWin();
 		this.displayInfo();
 	}
 	
@@ -33,15 +34,24 @@ public class Match {
 	
 	public void stop() {
 		int pointPlayer1, pointPlayer2;
+		int wonMatchPlayer1, wonMatchPlayer2;
+		wonMatchPlayer1 = player1.getWonMatch();
+		wonMatchPlayer2 = player2.getWonMatch();
 		pointPlayer1 = player1.getPoint();
 		pointPlayer2 = player2.getPoint();
 		
 		if (pointPlayer1 > pointPlayer2) {
 			this.winner = this.player1;
+			wonMatchPlayer1++;
 		}
 		else if (pointPlayer1 < pointPlayer2) {
 			this.winner = this.player2;
+			wonMatchPlayer2++;
 		}
+	}
+	
+	public void finalWin() {
+		
 	}
 	
 	//Display the information of the game
