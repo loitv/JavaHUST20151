@@ -6,20 +6,23 @@ import java.util.Scanner;
 public class Player {
 
 	private String name;
-	private int point;
+//	private int point;
+	private int roundPoint;
 	private int wonMatch;
 	private Scanner presskey;
 	
 	//Ham khoi tao
 	public Player(String initName) {
 		this.name = initName;
-		this.point = 0;
+//		this.point = 0;
+		this.roundPoint = 0;
+		this.wonMatch = 0;
 	}
 	
 	public void throwDie(Die die) {
 		int currentThrow;
 		presskey = new Scanner(System.in);
-		System.out.println("Press Enter to throw your die!");
+		System.out.print("Press Enter to throw your die!");
 		try {
 			System.in.read();
 		} catch(IOException e) {
@@ -27,26 +30,26 @@ public class Player {
 		}
 		presskey.nextLine();
 		currentThrow = die.roll();
-		this.point += currentThrow;
-		System.out.println(currentThrow + " points");
+//		this.point += currentThrow;
+		this.roundPoint = currentThrow;
+		System.out.println("You get " + currentThrow + " points.");
+		System.out.println();
 	}
-	
-	public void setPoint(int point) {
-		this.point = point;
+//	public void setPoint(int newPoint) {
+//		this.point = newPoint;
+//	}
+//	public int getPoint() {
+//		return this.point;
+//	}
+	public int getRoundPoint() {
+		return this.roundPoint;
 	}
-	
-	public int getPoint() {
-		return this.point;
+	public void incWon() {
+		this.wonMatch = wonMatch +1;
 	}
-	
-	public void setwonMatch(int wonMatch) {
-		this.wonMatch = wonMatch;
-	}
-	
 	public int getWonMatch() {
 		return wonMatch;
 	}
-	
 	public String getName() {
 		return this.name;
 	}
