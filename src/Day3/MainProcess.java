@@ -6,7 +6,7 @@ public class MainProcess {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Subject sbj = new Subject();
+		Subject sbj = new Subject("IT3650","Lap trinh Java",40, 0);
 		String yn = "Y";
 		boolean quit = false;
 

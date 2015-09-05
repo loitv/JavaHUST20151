@@ -7,9 +7,9 @@ public class Subject {
 	private int quota;
 	private int currentEnrolment;
 	
-	public Subject() {
-		this.quota = 80;
-	}
+//	public Subject() {
+//		this.quota = 80;
+//	}
 	public Subject(String initID, String initName, int initQuota, int initCurrentEnrolment) {
 		this.subjectID = new String(initID);
 		this.subjectName = new String(initName);
