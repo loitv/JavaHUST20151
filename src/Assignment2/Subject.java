@@ -1,5 +1,6 @@
 package Assignment2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,17 +10,10 @@ public class Subject {
 	private String subjectName;
 	private int subjectQuota;
 	private int currentEnrolment;
-//	private ArrayList sbjList;
-	
-//	public Subject(String initID, String initName, int initQuota, int initCurrentEnrolment) {
-//		this.subjectId = new String(initID);
-//		this.subjectName = new String(initName);
-//		this.subjectQuota = initQuota;
-//		this.currentEnrolment = initCurrentEnrolment;
-//	}
+	private Scanner sc;
 	
 	public void addSubject() {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		System.out.print("Ma mon hoc: ");
 		this.subjectId = sc.nextLine();
 		System.out.print("Ten mon hoc: ");
@@ -30,23 +24,34 @@ public class Subject {
 	
 	public void enrolStudent() {
 		System.out.println("Enrol Student.");
+		System.out.println("Nhan ENTER de thuc hien viec dang ky!");
+		Scanner presskey = new Scanner(System.in);
+		try {
+			System.in.read();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		presskey.nextLine();
+		
 		if (currentEnrolment < subjectQuota) {
 			++currentEnrolment;
-			System.out.println("Student enrolled in: " + subjectName);
+//			displaySubjectInfo();
+//			System.out.println("Da du SV! Dang ky khong thanh cong");
+//			System.out.println("Student enrolled in: " + subjectName);
 		}
 		else {
-			System.out.println("Quota reached! Enrolment failed!");
+			System.out.println("Da du SV! Dang ky khong thanh cong");
 		}
 	}
 	
 	public void unEnrolStudent() {
 		System.out.println("Un-Enrolling Student.");
 		if (currentEnrolment <= 0) {
-			System.out.println("No Student to Un-enrol");
+			System.out.println("Huy dang ky loi!");
 		}
 		else {
 			--currentEnrolment;
-			System.out.println("Student un-enrol from " + subjectName);
+			System.out.println("Sinh vien huy dang ky mon: " + subjectName);
 		}
 	}
 	
@@ -54,9 +59,9 @@ public class Subject {
 //		System.out.println("Subject ID " + subjectId);
 //		System.out.println("Subject Name " + subjectName);
 //		System.out.println("Quota " + subjectQuota);
-		System.out.println("Current Enrolment " + currentEnrolment);
+		System.out.println("So sinh vien da dang ky: " + currentEnrolment);
 		int availablePlaces = subjectQuota - currentEnrolment;
-		System.out.println("Can appcept " + availablePlaces + " more students");
+		System.out.println("Co the dang ky them " + availablePlaces + " sinh vien nua.");
 	}
 
 	public String getSubjectId() {

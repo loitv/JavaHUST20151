@@ -112,7 +112,7 @@ public class MainScreen {
 							System.out.println("Khong tim thay mon hoc! Moi thu lai");
 						}
 					} while (i == subjectList.size());
-					System.out.println(idSub + " " + nameSub + " " + quotaSub);
+//					System.out.println(idSub + " " + nameSub + " " + quotaSub);
 					Subject subject1 = new Subject();
 					subject1.setSubjectId(idSub);
 					subject1.setSubjectName(nameSub);
@@ -120,13 +120,17 @@ public class MainScreen {
 					int currentEnr = 0;
 					subject1.setCurrentEnrolment(currentEnr);
 					System.out.println("Dang ky mon hoc: " + nameSub);
-					subject1.unEnrolStudent();
 					subject1.displaySubjectInfo();
 					for (int j = 0; j <= quotaSub; j++) {
 						System.out.println();
 						subject1.enrolStudent();
 						subject1.displaySubjectInfo();
 						System.out.println();
+						System.out.println("Ban co muon tiep tuc (Y/N)? ");
+						String yn = sc.nextLine();
+						if (yn.equalsIgnoreCase("n")) {
+							break;
+						}
 					}
 
 				}
