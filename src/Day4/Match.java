@@ -8,10 +8,10 @@ public class Match {
 	private Player player1, player2;
 	private int round;
 	private int match;
-	private ArrayList<Integer> pointPlayer1 = new ArrayList();
-	private ArrayList<Integer> pointPlayer2 = new ArrayList();
-	private ArrayList<Integer> matchPoint1 = new ArrayList();
-	private ArrayList<Integer> matchPoint2 = new ArrayList();
+	private ArrayList<Integer> pointPlayer1 = new ArrayList<Integer>();
+	private ArrayList<Integer> pointPlayer2 = new ArrayList<Integer>();
+	private ArrayList<Integer> matchPoint1 = new ArrayList<Integer>();
+	private ArrayList<Integer> matchPoint2 = new ArrayList<Integer>();
 
 	public Match(String initPlayer1, String initPlayer2, int initRound, int initMatch) {
 		this.player1 = new Player(initPlayer1);
@@ -53,8 +53,8 @@ public class Match {
 			}
 			pointPlayer1.add(point1);
 			pointPlayer2.add(point2);
-			point1 = 0;
-			point2 = 0;
+			point1 = 0; //can luu y
+			point2 = 0; //can luu y
 
 		}
 		System.out.println("------RESULT!------\n");
