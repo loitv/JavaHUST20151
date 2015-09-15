@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class MainProcess {
 
+	private static Scanner sc;
+
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		Subject sbj = new Subject("IT3650","Lap trinh Java",40, 0);
 		String yn = "Y";
 		boolean quit = false;

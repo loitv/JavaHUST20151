@@ -13,7 +13,7 @@ public class Main {
 	private static Subject subject2;
 	
 	public static void pressKey() {
-		System.out.println("Press Enter to continue...");
+		System.out.println("Press Enter to return main menu...");
 		sc = new Scanner(System.in);
 		try {
 			System.in.read();
@@ -297,6 +297,7 @@ public class Main {
 				System.out.println();
 				subject2.displaySubjectInfo();
 				System.out.println();
+				pressKey();
 
 			} else {
 				quit = true;
