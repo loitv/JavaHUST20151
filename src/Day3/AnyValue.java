@@ -1,5 +1,4 @@
 package Day3;
-
 public class AnyValue {
 
 	private int data;
